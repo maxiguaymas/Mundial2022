@@ -1,0 +1,71 @@
+img{
+    display: block;
+    width: 60%;
+    height: 20vh;
+    margin: 0px auto;
+    margin-top: 2vh;
+}
+
+mat-card {
+    display: block;
+    width: 80%;
+    min-height: 50vh;
+    margin: 0px auto;
+    text-align: center;
+    margin-top: 1vh;
+    background-color: transparent;
+    
+}
+
+mat-card h2 {
+    font-size: 2.5em;
+    text-align: center;
+    line-height: 1em;
+    margin-top: 2vh;
+}
+
+mat-form-field {
+    width: 75%;
+    height: 10vh;
+    
+}
+
+
+mat-card button {
+    display: block;
+    margin: 0px auto;
+    margin-top: 2vh;
+    width: 75%;
+    background-color: #86113E;
+}
+
+mat-card-actions {
+    display: block;
+    margin-top: 8vh;
+    font-size: 1.5em;
+    margin-bottom: 2vh;
+}
+
+mat-card-actions a {
+    color: #86113E;
+}
+
+@media (max-width: 500px){
+    
+    mat-card h2 {
+        font-size: 2em;
+    }
+
+    mat-form-field {
+        width: 90%;
+    }
+    
+    
+    mat-card button {
+        width: 90%;
+    }
+
+    mat-card-actions {
+        font-size: 1.2em;
+    }
+}

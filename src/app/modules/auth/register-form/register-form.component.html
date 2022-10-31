@@ -1,0 +1,50 @@
+<mat-card>
+    <mat-card-content>
+
+        <h2>Creá tu cuenta</h2>
+
+        <form [formGroup]="registerForm" (ngSubmit)="register(registerForm)">
+
+            <mat-form-field>
+                <input matInput type="text" name="username" formControlName="username" placeholder="Ingresar nombre de usuario">
+                <div *ngIf="f['username'].errors && f['username'].touched">
+                    <mat-error *ngIf="f['username'].errors['required']">El campo Email es requerido</mat-error>
+                    <mat-error *ngIf="f['username'].errors['minlength']">Ingrese un Email valido.</mat-error>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="email" name="email" formControlName="email" placeholder="Ingresar Email">
+                <div *ngIf="f['email'].errors  && f['email'].touched">
+                    <mat-error *ngIf="f['email'].errors['required']">El campo Email es requerido</mat-error>
+                    <mat-error *ngIf="f['email'].errors['email']">Ingrese un Email valido.</mat-error>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="password" name="password" formControlName="password" placeholder="Ingresar contraseña">
+                <div *ngIf="f['password'].errors  && f['password'].touched">
+                    <mat-error *ngIf="f['password'].errors['required']">El campo contraseña es requerido</mat-error>
+                    <mat-error *ngIf="f['password'].errors['minlength']">Contraseña debe tener 6 caracteres como minimo</mat-error>
+                </div>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput type="password" name="confirm_password" formControlName="confirm_password" placeholder="Confirmar contraseña">
+                <div *ngIf="f['confirm_password'].errors  && f['confirm_password'].touched">
+                    <mat-error *ngIf="f['confirm_password'].errors['required']">El campo contraseña es requerido</mat-error>
+                    <mat-error *ngIf="f['confirm_password'].errors['minlength']">Contraseña debe tener 6 caracteres como minimo</mat-error>
+                    <mat-error *ngIf="f['confirm_password'].errors['mustMatch']">Las contraseñas deben coincidir</mat-error>
+                </div>
+            </mat-form-field>
+
+            <button type="submit" mat-raised-button color="primary" [disabled]="registerForm.invalid">Registrarse</button>
+
+        </form>
+
+    </mat-card-content>
+
+    <mat-card-actions>
+        <a routerLink="/login">Ya tengo una cuenta</a>
+    </mat-card-actions>
+</mat-card>

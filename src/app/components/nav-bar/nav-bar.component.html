@@ -1,0 +1,22 @@
+<header class="nav" [class.nav-close]="!nav_open">
+    <div class="container-navbar">
+        <div class="row">
+            <div class="user-item">
+                <img src="../../../assets/images/qatar2022.jpg" alt="logo qatar2022" srcset="" [routerLink]="['/inicio']">
+                <p>Hola, Maxiguaymas480</p>
+            </div>
+
+            <div class="menu-icon">
+                <i (click)="menu_open = !menu_open"><mat-icon>menu</mat-icon></i>
+            </div>
+            <div class="menu" [class.menu-open]="menu_open">
+                <ul>
+                    <li><a (click)="menu_open = !menu_open" [routerLink]="['/inicio']">Inicio</a></li>
+                    <li><a (click)="menu_open = !menu_open" [routerLink]="['/usuario/mi-album']">Mi Álbum</a></li>
+                    <li><a (click)="menu_open = !menu_open" [routerLink]="['/contacto']">Contacto</a></li>
+                </ul>
+                <button mat-raised-button>Cerrar Sesión</button>
+            </div>
+        </div>
+    </div>
+</header>

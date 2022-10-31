@@ -1,0 +1,55 @@
+.container-album-page{
+    width: 100%;
+    min-height: 100vh;
+    background-color: black;
+    background-image: url('../../../../assets/images/fondoqatar3.webp');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    padding-top: 4vh;
+    font-family: 'Caveat', cursive;
+}
+
+.select-paises{
+    width: 95%;
+    list-style: none;
+    margin: 0px auto;
+}
+
+.select-pais{
+    display: inline-block;
+    background-color: whitesmoke;
+    margin: 0 0 0.5em 0.5em;
+    border-radius: 1em;
+    font-size: 1.5em;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.album{
+    width: 90%;
+    background-color: #E9E616;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.album h1{
+    font-family: 'Caveat', cursive;
+}
+
+.album ul{
+    list-style: none;
+}
+
+.album ul li{
+    display: inline-block;
+    margin: 0 0 0.5em 0.5em;
+}
+
+.album ul li img{
+    width: 200px;
+    height: 250px;
+}

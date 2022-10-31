@@ -1,0 +1,12 @@
+<div class="container-album-page">
+    <ul class="select-paises">
+        <li class="select-pais" *ngFor="let pais of user.album.paises;let i=index;" (click)="actualizarPais(i)">{{pais.pais}}  |  {{pais.fig_completadas}}/18</li>
+    </ul>
+
+    <div class="album">
+        <h1>{{user.album.paises[paisActual].pais}}</h1>
+        <ul>
+            <li *ngFor="let jugador of user.album.paises[paisActual].jugadores"><img src="https://imageup.me/images/messi.jpeg" alt=""></li>
+        </ul>
+    </div>
+</div>
