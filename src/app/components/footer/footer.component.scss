@@ -34,3 +34,8 @@ footer div p{
 
 }
 
+@media screen and ( max-height: 550px ) {
+    footer{
+        height: 30vh;
+    }
+}

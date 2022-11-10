@@ -1,0 +1,20 @@
+<div class="container" *ngIf="show_modal">
+    <div class="content">
+        <h3 *ngIf="!loading_sobre && !open_sobre">Toca el sobre</h3>
+        <img src="../../../assets/images/sobre-panini.jpg" alt="sobre panini" (click)="abrirSobre()" *ngIf="!open_sobre">
+        <h3 *ngIf="loading_sobre">Abriendo sobre...</h3>
+        <mat-spinner diameter="150" *ngIf="loading_sobre"></mat-spinner>
+
+        <h3 *ngIf="open_sobre">Sobre abierto</h3>
+        <div class="container-figuritas" *ngIf="open_sobre">
+            <!-- <app-figurita></app-figurita>  mando array de figuritas que tocaron en el sobre-->
+            <img src="https://imageup.me/images/messi.jpeg" alt="...">
+            <img src="https://imageup.me/images/messi.jpeg" alt="...">
+            <img src="https://imageup.me/images/messi.jpeg" alt="...">
+            <img src="https://imageup.me/images/messi.jpeg" alt="...">
+            <img src="https://imageup.me/images/messi.jpeg" alt="...">
+        </div>
+        <button mat mat-raised-button *ngIf="open_sobre" (click)="hide()">Continuar</button>
+
+    </div>
+</div>

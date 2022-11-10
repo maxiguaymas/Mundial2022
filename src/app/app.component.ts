@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { fader, slideInAnimation} from './anitmations/animation';
+import { fader, slideInAnimation} from './animations/animation';
 
 @Component({
   selector: 'app-root',
@@ -13,10 +13,5 @@ export class AppComponent {
   
   onActive(){
     window.scroll(0,0);
-    setTimeout(() => {
-      this.view = false;
-    }, 1000);
-
-    this.view = true;
   }
 }

@@ -8,14 +8,65 @@
     background-attachment: fixed;
     background-size: 100% 100%;
     padding-top: 4vh;
+    padding-bottom: 4vh;
     font-family: 'Caveat', cursive;
 }
 
+
+button{
+    display: block;
+    width: 170px;
+    margin: 0px auto;
+    margin-bottom: 2vh;
+    font-size: 1.2em;
+}
+
+.close{
+    display: block;
+    width: auto;
+    height: auto;
+    font-size: 3em;
+    color: whitesmoke;
+    position: fixed;
+    right: -1em;
+    top: 11vh;
+    z-index: 1;
+    transition: 400ms ease-in-out;
+}
+
 .select-paises{
+    display: block;
     width: 95%;
     list-style: none;
     margin: 0px auto;
+    position:fixed;
+    left: -100%;
+    top: 9vh;
+    transition: 400ms ease-in-out;
 }
+
+
+.select-paises-open{
+    left: 0em;
+    transition: 400ms ease-in-out;
+    background-color: rgb(47, 79, 79,0.9);
+    // background-color: rgb(134, 17, 62,0.9);
+    width: 100%;
+    // padding: 1em;
+    padding-right: 2em;
+    padding-top: 15vh;
+    padding-bottom: 70vh;
+}
+
+.close-select-paises{
+    display: block;
+    right: 0.5em;
+    z-index: 1;
+    transition: 400ms ease-in-out;
+}
+
+
+
 
 .select-pais{
     display: inline-block;
@@ -23,33 +74,166 @@
     margin: 0 0 0.5em 0.5em;
     border-radius: 1em;
     font-size: 1.5em;
+    font-weight: bolder;
     padding: 0.5em;
     cursor: pointer;
 }
 
 .album{
     width: 90%;
-    background-color: #E9E616;
+    background-color: rgb(42, 57, 80,0.9);
     margin: 0px auto;
+    margin-top: 3vh;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 3vh;
+    border-radius: 1em;
+    box-shadow: 14px 14px 14px 0 rgba(17, 16, 16, 0.3);
 }
 
 .album h1{
     font-family: 'Caveat', cursive;
+    font-weight:lighter;
+    color: whitesmoke;
+    // font-family: 'Quicksand', sans-serif;
+    font-weight: bolder;
+    font-size: 6em;
+    margin-top: 5vh;
+    margin-bottom: 4vh;
+    border-bottom: 2px solid whitesmoke;
+    padding-bottom: 5vh;
 }
 
 .album ul{
     list-style: none;
+    width: 95%;
+    // padding-left: 1em;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
 }
 
 .album ul li{
-    display: inline-block;
-    margin: 0 0 0.5em 0.5em;
+    display: block;
+    margin: 0.5em;
+    // width: 16%;
 }
 
-.album ul li img{
-    width: 200px;
-    height: 250px;
+
+.spinner{
+    display: block;
+    margin: 0px auto;
+    margin-top: 8vh;
+}
+// .spinner svg{
+//     width: 200px;
+//     height: 200px;
+// }
+
+
+@media (max-width: 1000px){
+    .select-paises{
+        position:fixed;
+        left: -70em;
+        top: 9vh;
+        transition: 400ms ease-in-out;
+        
+    }
+
+    .select-paises-open{
+        left: 0em;
+        transition: 400ms ease-in-out;
+        background-color: rgb(47, 79, 79,0.9);
+        // background-color: rgb(134, 17, 62,0.9);
+        width: 100%;
+        // padding: 1em;
+        padding-right: 2em;
+        padding-top: 15vh;
+        padding-bottom: 41vh;
+    }
+
+
+
+    .album ul{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+    
+}
+
+@media (max-width: 703px){
+
+    .album h1{
+        font-size: 4em;
+    }
+
+
+    .select-paises-open{
+        padding-top: 12vh;
+    }
+    .select-pais{
+        font-size: 1.3em;
+
+    }
+}
+
+@media (max-width: 600px){
+
+    .album ul{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 525px){
+
+    .album h1{
+        font-size: 3.5em;
+    }
+    .select-pais{
+        font-size: 1em;
+    }
+
+    .album ul{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .album ul li{
+        margin: 0.3em;
+    }
+}
+
+@media (max-width: 400px){
+
+    .album h1{
+        font-size: 3em;
+    }
+
+
+}
+
+@media screen and ( max-height: 550px ) {
+    .album h1{
+        margin-top: 8vh;
+    }
+    .select-paises{
+        top: 14vh;       
+    }
+
+    .close-select-paises{
+        top: 17vh;
+    }
+
+    .select-pais{
+        font-size: 1.2em;
+    }
+}
+
+@media screen and ( max-height: 450px ) {
+
+    .select-pais{
+        font-size: 1em;
+    }
+
+    .select-paises-open{
+        padding-top: 17vh;
+    }
 }

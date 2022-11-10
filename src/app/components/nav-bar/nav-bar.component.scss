@@ -167,3 +167,19 @@ mat-icon{
         cursor: pointer;
     }
 }
+
+
+@media screen and ( max-height: 550px ) {
+    .nav{
+        height: 15vh;
+    }
+    
+    .container-navbar{
+        height: 15vh;
+    }
+
+    .menu{
+        top: 15vh;
+    }
+    
+}

@@ -1,0 +1,7 @@
+<img loading="lazy" src="https://app-mundial-2022.herokuapp.com/api/images/{{jugador.jug_img}}" alt="{{jugador.nombre_jug}}" *ngIf="!jugador.in_album">
+
+<div class="no-encontrada" *ngIf="jugador.in_album">
+    <p>{{jugador.nombre_jug}}</p>
+</div>
+
+<img src="https://imageup.me/images/messi.jpeg" alt="{{jugador.nombre_jug}}" *ngIf="modal">

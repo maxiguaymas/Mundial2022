@@ -1,12 +1,19 @@
 <div class="container-album-page">
-    <ul class="select-paises">
-        <li class="select-pais" *ngFor="let pais of user.album.paises;let i=index;" (click)="actualizarPais(i)">{{pais.pais}}  |  {{pais.fig_completadas}}/18</li>
-    </ul>
 
-    <div class="album">
+    <button mat-raised-button (click)="select_paises_open = !select_paises_open">Seleccionar pais <mat-icon>expand_more</mat-icon></button>
+    <button mat-raised-button (click)="modal.show()">Abrir un sobre</button>
+    <app-modal-sobre #modal></app-modal-sobre>
+
+    <mat-icon class="close" (click)="select_paises_open = !select_paises_open" [class.close-select-paises]="select_paises_open">close</mat-icon>
+      <ul class="select-paises" [class.select-paises-open]="select_paises_open">
+        <li class="select-pais" *ngFor="let pais of user.album.paises;let i=index;" (click)="actualizarPais(i)" (click)="select_paises_open = !select_paises_open">{{pais.pais}}  |  {{pais.fig_completadas}}/{{pais.jugadores.length}}</li>
+      </ul>  
+    
+      <mat-spinner *ngIf="spinner" class="spinner" diameter="250"></mat-spinner>
+    <div class="album" *ngIf="!spinner">
         <h1>{{user.album.paises[paisActual].pais}}</h1>
         <ul>
-            <li *ngFor="let jugador of user.album.paises[paisActual].jugadores"><img src="https://imageup.me/images/messi.jpeg" alt=""></li>
+            <li *ngFor="let jugador of user.album.paises[paisActual].jugadores"><app-figurita [jugador]="jugador"></app-figurita></li>
         </ul>
     </div>
 </div>

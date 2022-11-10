@@ -177,3 +177,20 @@
         padding-left: 1em;
     }
 }
+
+
+
+@media screen and ( max-height: 550px ) {
+    .text{
+        min-height: 105vh;
+    }
+
+    .text h1{
+        line-height: 14vh;
+    }
+
+    .figuritas p{
+        line-height: 14vh;
+    }
+    
+}
