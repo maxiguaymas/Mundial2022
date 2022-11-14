@@ -63,3 +63,20 @@ mat-card-actions a {
         font-size: 1.2em;
     }
 }
+
+@media screen and ( max-height: 550px ) {
+
+    mat-card{
+        padding-bottom: 8vh;
+    }
+
+    mat-form-field {
+        margin-top: 8vh;
+    }
+
+    mat-card button {
+        margin-top: 11vh;
+    }
+
+
+}

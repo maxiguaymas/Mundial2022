@@ -69,3 +69,18 @@ mat-card-actions a {
         font-size: 1.2em;
     }
 }
+
+@media screen and ( max-height: 550px ) {
+    img{
+        height: 25vh;
+    }
+
+    mat-form-field {
+        margin-top: 8vh;
+    }
+
+    mat-card button {
+
+        margin-top: 9vh;
+    }
+}

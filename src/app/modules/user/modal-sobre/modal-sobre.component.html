@@ -7,12 +7,7 @@
 
         <h3 *ngIf="open_sobre">Sobre abierto</h3>
         <div class="container-figuritas" *ngIf="open_sobre">
-            <!-- <app-figurita></app-figurita>  mando array de figuritas que tocaron en el sobre-->
-            <img src="https://imageup.me/images/messi.jpeg" alt="...">
-            <img src="https://imageup.me/images/messi.jpeg" alt="...">
-            <img src="https://imageup.me/images/messi.jpeg" alt="...">
-            <img src="https://imageup.me/images/messi.jpeg" alt="...">
-            <img src="https://imageup.me/images/messi.jpeg" alt="...">
+            <app-figurita *ngFor="let jugador of list_figuritas" [jugador]="jugador" [modal]="true"></app-figurita>
         </div>
         <button mat mat-raised-button *ngIf="open_sobre" (click)="hide()">Continuar</button>
 

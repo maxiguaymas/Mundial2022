@@ -1,19 +1,27 @@
 <div class="container-album-page">
 
-    <button mat-raised-button (click)="select_paises_open = !select_paises_open">Seleccionar pais <mat-icon>expand_more</mat-icon></button>
-    <button mat-raised-button (click)="modal.show()">Abrir un sobre</button>
-    <app-modal-sobre #modal></app-modal-sobre>
+  <div *ngIf="!(isLoading$ | async)">
 
-    <mat-icon class="close" (click)="select_paises_open = !select_paises_open" [class.close-select-paises]="select_paises_open">close</mat-icon>
-      <ul class="select-paises" [class.select-paises-open]="select_paises_open">
-        <li class="select-pais" *ngFor="let pais of user.album.paises;let i=index;" (click)="actualizarPais(i)" (click)="select_paises_open = !select_paises_open">{{pais.pais}}  |  {{pais.fig_completadas}}/{{pais.jugadores.length}}</li>
-      </ul>  
-    
-      <mat-spinner *ngIf="spinner" class="spinner" diameter="250"></mat-spinner>
-    <div class="album" *ngIf="!spinner">
-        <h1>{{user.album.paises[paisActual].pais}}</h1>
-        <ul>
-            <li *ngFor="let jugador of user.album.paises[paisActual].jugadores"><app-figurita [jugador]="jugador"></app-figurita></li>
-        </ul>
-    </div>
+      <button mat-raised-button (click)="select_paises_open = !select_paises_open">Seleccionar pais <mat-icon>expand_more</mat-icon></button>
+      <button mat-raised-button (click)="modal.show()">Abrir un sobre</button>
+      <app-modal-sobre #modal></app-modal-sobre>
+
+      <mat-icon class="close" (click)="select_paises_open = !select_paises_open" [class.close-select-paises]="select_paises_open">close</mat-icon>
+        <ul class="select-paises" [class.select-paises-open]="select_paises_open">
+          <li class="select-pais" *ngFor="let pais of album.paises;let i=index;" (click)="actualizarPais(i)" (click)="select_paises_open = !select_paises_open">{{pais.pais}}  |  {{pais.fig_completadas}}/{{pais.jugadores.length}}</li>
+        </ul>  
+      
+        <mat-spinner *ngIf="spinner" class="spinner" diameter="250"></mat-spinner>
+      <div class="album" *ngIf="!spinner">
+          <h1>{{album.paises[paisActual].pais}}</h1>
+          <ul>
+              <li *ngFor="let jugador of album.paises[paisActual].jugadores"><app-figurita [jugador]="jugador"></app-figurita></li>
+          </ul>
+      </div>
+
+  </div>
+
+  <mat-spinner *ngIf="isLoading$ | async" class="spinner" diameter="250"></mat-spinner>
+
 </div>
+

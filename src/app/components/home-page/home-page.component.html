@@ -5,7 +5,7 @@
         </h1>
 
         <div class="box buttons">
-        <button mat-raised-button routerLink="/register">Crear Mi Álbum</button>
+        <button mat-raised-button routerLink="/register" *ngIf="!logged_in">Crear Mi Álbum</button>
         <button mat-raised-button routerLink="/usuario/mi-album">Ir a Mi Álbum</button>
         </div>
 

@@ -8,14 +8,14 @@
     flex-direction: row;
 }
 
-.form-contact,.social{
-    width: 50%;
+.form-contact{
+    width: 100%;
     padding-top: 10vh;
 }
 
 form{
     background-color: white;
-    width: 80%;
+    width: 40%;
     height: 60vh;
     margin: 0px auto;
     display: flex;
@@ -54,10 +54,6 @@ form button:hover{
     background-color: #474c57;
 }
 
-.social{
-    text-align: center;
-    color: whitesmoke;
-}
 
 .form-contact h1{
     color: whitesmoke;
@@ -66,19 +62,12 @@ form button:hover{
     text-align: center;
 }
 
-.social p{
-    font-size: 2em;
-    margin-top: 4vh;
-}
 
 @media (max-width: 1000px){
-    .form-contact{
+    
+    form{
         width: 60%;
     }
-    .social{
-        width: 40%;
-    }
-
     .form-contact h1{
         font-size: 3.5em;
     }
@@ -90,18 +79,22 @@ form button:hover{
 }
 
 @media (max-width: 700px){
-    .container-contact{
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding-bottom: 4vh;
+    form{
+        width: 80%;
     }
 
+}
+
+@media screen and ( max-height: 450px ){
+
     .form-contact{
-        width: 90%;
+        padding-bottom: 10vh;
     }
-    .social{
-        display: none;
+
+    form{
+        width: 40%;
+        height: 80vh;
+
     }
 
 }

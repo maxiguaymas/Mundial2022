@@ -33,4 +33,11 @@ img{
     }
 
 }
+
+
+@media screen and ( max-height: 550px ) {
+    .register-page{
+        height: 150vh;
+    }
+}
   

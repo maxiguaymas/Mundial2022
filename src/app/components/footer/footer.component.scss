@@ -12,10 +12,13 @@ footer p{
     color: whitesmoke;
 }
 
-footer div p{
+footer div a{
+    font-size: 1.5em;
     display: inline-block;
     margin: 1em;
     padding-bottom: 1vh;
+    text-decoration: none;
+    color: whitesmoke;
 }
 
 @media (max-width: 500px){

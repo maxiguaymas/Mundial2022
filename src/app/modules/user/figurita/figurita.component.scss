@@ -23,6 +23,14 @@ img{
     border-top: 2px solid black;
 }
 
+.repetida{
+    display: block;
+    background-color: red;
+    color: whitesmoke;
+    font-size: 1em;
+    text-align: center;
+}
+
 @media (max-width: 1000px){
 
     img, .no-encontrada{

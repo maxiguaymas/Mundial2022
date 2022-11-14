@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NavigationEnd, NavigationStart, Router } from '@angular/router';
 import { filter } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-nav-bar',
@@ -8,13 +9,24 @@ import { filter } from 'rxjs';
   styleUrls: ['./nav-bar.component.scss']
 })
 export class NavBarComponent implements OnInit {
-
+  username!: string;
+  logged_in!: boolean;
   menu_open: boolean = false;
   nav_open: boolean = true;
 
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    this.username = localStorage.getItem('username')!;
+
+    if(localStorage.getItem('token')?.length === environment.token){
+      this.logged_in = true;
+    }
+    else{
+      this.logged_in = false;
+    }
+
+    
       this.router.events.pipe(
         filter(event => event instanceof NavigationEnd)  
       ).subscribe((event: any) => {
@@ -26,8 +38,14 @@ export class NavBarComponent implements OnInit {
         }
         else{
           this.nav_open = true;
+          this.ngOnInit();
         }
       });
+  }
+
+  logout(){
+    localStorage.clear();
+    this.router.navigate(['login']);
   }
 
 }

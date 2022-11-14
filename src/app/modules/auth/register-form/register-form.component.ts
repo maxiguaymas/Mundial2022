@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { RegisterData } from 'src/app/models/register-data';
+import { AppState } from 'src/app/state/app.state';
+import { registerAction } from 'src/app/state/auth/register/register.actions';
+import { selectErrorRegister, selectLoadingRegister } from 'src/app/state/auth/register/register.selectors';
 
 @Component({
   selector: 'app-register-form',
@@ -8,8 +14,13 @@ import { AbstractControlOptions, FormBuilder, FormControl, FormGroup, Validators
 })
 export class RegisterFormComponent implements OnInit {
   public registerForm!: FormGroup;
+  public isLoading$: Observable<boolean>;
+  public isError$: Observable<string | null>;
 
-  constructor(private formBuilder:FormBuilder) { }
+  constructor(private formBuilder:FormBuilder, private store: Store<AppState>) {
+    this.isLoading$ = this.store.select(selectLoadingRegister);
+    this.isError$ = this.store.select(selectErrorRegister);
+  }
 
   ngOnInit(): void {
     this.initRegisterForm();
@@ -56,7 +67,10 @@ export class RegisterFormComponent implements OnInit {
 
   register(form:any){
     console.log(form.value);
-    this.registerForm.reset();
+    let {username,email,password} = form.value;
+    let data: RegisterData = {username,email,password}
+    this.store.dispatch(registerAction({data}));
+    // this.registerForm.reset();
   }
 
 }

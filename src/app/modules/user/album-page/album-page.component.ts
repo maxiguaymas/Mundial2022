@@ -1,7 +1,12 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
 import { Album } from 'src/app/models/album';
 import { User } from 'src/app/models/user';
 import { UserService } from 'src/app/services/user.service';
+import { AppState } from 'src/app/state/app.state';
+import { userAlbumAction } from 'src/app/state/user/user.actions';
+import { selectLoadingUserAlbum, selectUserAlbum, selectErrorUserAlbum } from 'src/app/state/user/user.selectors';
 import { paises } from '../paises';
 
 @Component({
@@ -11,25 +16,29 @@ import { paises } from '../paises';
 })
 export class AlbumPageComponent implements OnInit {
   user!: User;
-  album!: Album;
+  album!: Album ;
   paises: string[] = paises;
   paisActual:number = 0;
   select_paises_open = false;
   spinner:boolean = false;
-  constructor(private userService:UserService) { }
-
+  email!: string;
+  public isLoading$: Observable<boolean>;
+  public isError$: Observable<string | null>;
+  
+  constructor(private store: Store<AppState>) {
+    this.isLoading$ = this.store.select(selectLoadingUserAlbum);
+    this.isError$ = this.store.select(selectErrorUserAlbum);
+   }
   ngOnInit(): void {
-    this.userService.getAlbum('maxi@gmail.com').subscribe({
-      next: (response:any) => {
-        this.user= response.user;
-        console.log(this.user);
-        this.album = this.user.album;
-      },
-      error: (error) => {
-        console.error(`error : ${error}`)
-      },
-      complete: () => console.log('peticion completada')
-    })
+    this.email = localStorage.getItem('email')!;
+    this.store.dispatch(userAlbumAction({email: this.email}));
+    
+    this.store.select(selectUserAlbum).subscribe(
+      (album) =>{
+        this.album = album!;
+      }
+    )
+
   }
 
   actualizarPais(i:number){

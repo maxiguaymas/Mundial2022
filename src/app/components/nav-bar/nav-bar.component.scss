@@ -71,6 +71,7 @@ mat-icon{
     flex-direction: row;
     list-style: none;
     padding-top: 0.5vh;
+    margin-right: 1em;
 }
 .menu ul li{
     margin-left: 1em;
@@ -92,7 +93,7 @@ mat-icon{
 
 .menu button{
     margin-top: -0.5vh;
-    margin-left: 2em;
+    margin-left: 0px;
     margin-right: 2em;
     background-color: #86113E;
     color: whitesmoke;
@@ -115,6 +116,10 @@ mat-icon{
         background-color: white;
         flex-direction: column;
         transition: 400ms ease-in-out;
+    }
+
+    .menu ul{
+        margin-right: 0px;
     }
 
     .menu-open{
@@ -144,6 +149,7 @@ mat-icon{
 
 
     .menu button{
+        margin-left: 2em;
         margin-top: 2vh;
         width: 10em;
     }

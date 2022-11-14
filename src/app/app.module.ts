@@ -11,6 +11,12 @@ import { HomePageComponent } from './components/home-page/home-page.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { EffectsModule } from '@ngrx/effects';
+import { LoginEffects } from './state/auth/login/login.effects';
+import { RegisterEffects } from './state/auth/register/register.effects';
+import { UserAlbumEffects } from './state/user/user.effects';
+import { ROOT_REDUCERS } from './state/app.state';
 
 @NgModule({
   declarations: [
@@ -26,7 +32,9 @@ import { StoreModule } from '@ngrx/store';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
-    StoreModule.forRoot({}, {})
+    StoreModule.forRoot(ROOT_REDUCERS),
+    StoreDevtoolsModule.instrument({ name: 'TEST' }),
+    EffectsModule.forRoot([LoginEffects,RegisterEffects,UserAlbumEffects])
   ],
   providers: [],
   bootstrap: [AppComponent]
