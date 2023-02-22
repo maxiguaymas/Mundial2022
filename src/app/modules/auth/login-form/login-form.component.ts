@@ -39,11 +39,8 @@ export class LoginFormComponent implements OnInit {
   }
 
   login(form:any){
-    console.log(form.value);
     let data: LoginData = form.value;
     this.store.dispatch(loginAction({data}));
-    // this.loginForm.reset();
-    console.log('login realizado');
   }
 
 }

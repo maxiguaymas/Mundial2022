@@ -4,9 +4,12 @@
     padding: 0;
 }
 
-html, body { height: 100%; overflow-x: hidden;}
+html, body { height: 100%; overflow-x: hidden; top: 0 !important;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .cdk-global-scrollblock{
     overflow-y:hidden;
 }
+
+
+

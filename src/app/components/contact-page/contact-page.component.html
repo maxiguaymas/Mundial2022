@@ -1,23 +1,36 @@
 <div class="container-contact">
   <div class="form-contact">
-    <h1>Contactame!</h1>
-    <form>
+    <h1>Contáctame!</h1>
+    <form [formGroup]="contactForm" (ngSubmit)="sendMessage(contactForm)">
       <mat-form-field>
         <mat-label>Nombre</mat-label>
-        <input type="text" matInput />
+        <input type="text" matInput name="name" formControlName="name"/>
+        <div *ngIf="f['name'].errors && f['name'].touched">
+          <mat-error *ngIf="f['name'].errors['required']">El campo nombre es requerido</mat-error>
+          <mat-error *ngIf="f['name'].errors['minlength']">El nombre debe tener 2 caracteres como minimo.</mat-error>
+      </div>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label>Email</mat-label>
-        <input type="email" matInput />
+        <input type="email" matInput name="email" formControlName="email"/>
+        <div *ngIf="f['email'].errors  && f['email'].touched">
+          <mat-error *ngIf="f['email'].errors['required']">El campo Email es requerido</mat-error>
+          <mat-error *ngIf="f['email'].errors['email']">Ingrese un Email valido.</mat-error>
+      </div>
       </mat-form-field>
 
       <mat-form-field>
         <mat-label class="textarea">Mensaje</mat-label>
-        <textarea matInput></textarea>
+        <textarea matInput name="message" formControlName="message"></textarea>
+        <div *ngIf="f['message'].errors  && f['message'].touched">
+          <mat-error *ngIf="f['message'].errors['required']">El campo Mensaje es requerido</mat-error>
+          <mat-error *ngIf="f['message'].errors['minlength']">El mensaje debe tener 6 caracteres como minimo.</mat-error>
+      </div>
       </mat-form-field>
 
-      <button mat-raised-button>Enviar Mensaje</button>
+      <button mat-raised-button type="submit" [disabled]="contactForm.invalid">Enviar Mensaje</button>
+      <span class="send" *ngIf="send">Mensaje enviado.</span>
     </form>
   </div>
 

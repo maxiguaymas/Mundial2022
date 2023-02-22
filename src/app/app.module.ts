@@ -17,6 +17,7 @@ import { LoginEffects } from './state/auth/login/login.effects';
 import { RegisterEffects } from './state/auth/register/register.effects';
 import { UserAlbumEffects } from './state/user/user.effects';
 import { ROOT_REDUCERS } from './state/app.state';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,6 +33,8 @@ import { ROOT_REDUCERS } from './state/app.state';
     BrowserAnimationsModule,
     MaterialModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     StoreModule.forRoot(ROOT_REDUCERS),
     StoreDevtoolsModule.instrument({ name: 'TEST' }),
     EffectsModule.forRoot([LoginEffects,RegisterEffects,UserAlbumEffects])

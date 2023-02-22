@@ -3,12 +3,25 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+  production: true,
   endpoints: {
-    login: 'https://app-mundial-2022.herokuapp.com/api/login',
-    register: 'https://app-mundial-2022.herokuapp.com/api/register',
-    user: 'https://app-mundial-2022.herokuapp.com/api/album-user/',
-  },
+    login: 'http://localhost:5000/api/login',
+    register: 'http://localhost:5000/api/register',
+    user: 'http://localhost:5000/api/album-user/',
+    sendMessage: 'http://localhost:5000/api/send-mail'
+    },
+  // endpoints: {
+  //   login: 'https://mundial-2022-server.onrender.com/api/login',
+  //   register: 'https://mundial-2022-server.onrender.com/api/register',
+  //   user: 'https://mundial-2022-server.onrender.com/api/album-user/',
+  //   sendMessage: 'https://mundial-2022-server.onrender.com/api/send-mail'
+  // },
+  // endpointslocalhost: {
+  //   login: 'http://localhost:5000/api/login',
+  //   register: 'http://localhost:5000/api/register',
+  //   user: 'http://localhost:5000/api/album-user/',
+  //   sendMessage: 'http://localhost:5000/api/send-mail'
+  // },
   token: 172,
 };
 

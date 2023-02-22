@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavigationEnd, NavigationStart, Router } from '@angular/router';
+import { NavigationEnd, Router } from '@angular/router';
 import { filter } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -46,6 +46,7 @@ export class NavBarComponent implements OnInit {
   logout(){
     localStorage.clear();
     this.router.navigate(['login']);
+    this.menu_open = !this.menu_open;
   }
 
 }

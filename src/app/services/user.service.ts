@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { Album } from '../models/album';
+import { sendMessage } from '../models/sendMessage';
 
 @Injectable({
   providedIn: 'root'
@@ -29,5 +30,10 @@ export class UserService {
     // return this.http.put('http://localhost:5000/api/album-user/'.concat(email),{album} ,{headers: this.httpHeaders});
 
     return this.http.put(environment.endpoints.user.concat(email),{album} ,{headers: this.httpHeaders});
+  }
+
+  sendEmail(body:sendMessage){
+    this.httpHeaders = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.http.post(environment.endpoints.sendMessage,body,{headers: this.httpHeaders});
   }
 }

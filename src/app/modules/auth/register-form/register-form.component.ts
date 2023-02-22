@@ -66,11 +66,9 @@ export class RegisterFormComponent implements OnInit {
   }
 
   register(form:any){
-    console.log(form.value);
     let {username,email,password} = form.value;
     let data: RegisterData = {username,email,password}
     this.store.dispatch(registerAction({data}));
-    // this.registerForm.reset();
   }
 
 }

@@ -23,7 +23,6 @@ export class RegisterEffects {
                       });
                     this.userService.createAlbum(action.data.email).subscribe(
                         response => {
-                            console.log('album creado con exito');
                         }
                     )
                     return registerActions.registerSuccessAction();

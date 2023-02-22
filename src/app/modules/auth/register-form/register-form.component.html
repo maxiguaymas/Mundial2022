@@ -8,8 +8,8 @@
             <mat-form-field>
                 <input matInput type="text" name="username" formControlName="username" placeholder="Ingresar nombre de usuario">
                 <div *ngIf="f['username'].errors && f['username'].touched">
-                    <mat-error *ngIf="f['username'].errors['required']">El campo Email es requerido</mat-error>
-                    <mat-error *ngIf="f['username'].errors['minlength']">Ingrese un Email valido.</mat-error>
+                    <mat-error *ngIf="f['username'].errors['required']">El campo nombre de usuario es requerido</mat-error>
+                    <mat-error *ngIf="f['username'].errors['minlength']">Nombre de usuario debe tener 2 caracteres como minimo.</mat-error>
                 </div>
             </mat-form-field>
 

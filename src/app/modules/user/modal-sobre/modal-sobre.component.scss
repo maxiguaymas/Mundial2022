@@ -87,6 +87,10 @@ button{
 
 
 @media screen and ( max-height: 450px ){
+    .content{
+        padding-top: 2vh;
+        padding-bottom: 2vh;
+    }
     .content img{
         width: 110px;
         height: 160px;
@@ -95,6 +99,7 @@ button{
 
     .content h3{
         font-size: 1.5em;
+        margin-bottom: 1vh;
     }
 
     .container-figuritas{

@@ -3,12 +3,12 @@
   <div *ngIf="!(isLoading$ | async)">
 
       <button mat-raised-button (click)="select_paises_open = !select_paises_open">Seleccionar pais <mat-icon>expand_more</mat-icon></button>
-      <button mat-raised-button (click)="modal.show()">Abrir un sobre</button>
+      <button mat-raised-button (click)="modal.show()" *ngIf="album.fig_completadas < 575">Abrir un sobre</button>
       <app-modal-sobre #modal></app-modal-sobre>
 
       <mat-icon class="close" (click)="select_paises_open = !select_paises_open" [class.close-select-paises]="select_paises_open">close</mat-icon>
         <ul class="select-paises" [class.select-paises-open]="select_paises_open">
-          <li class="select-pais" *ngFor="let pais of album.paises;let i=index;" (click)="actualizarPais(i)" (click)="select_paises_open = !select_paises_open">{{pais.pais}}  |  {{pais.fig_completadas}}/{{pais.jugadores.length}}</li>
+          <li class="select-pais" *ngFor="let pais of album.paises;let i=index;" (click)="actualizarPais(i)" (click)="select_paises_open = !select_paises_open" [class.completed]="pais.fig_completadas == pais.jugadores.length">{{pais.pais}}  |  {{pais.fig_completadas}}/{{pais.jugadores.length}}</li>
         </ul>  
       
         <mat-spinner *ngIf="spinner" class="spinner" diameter="250"></mat-spinner>
