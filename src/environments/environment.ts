@@ -5,10 +5,10 @@
 export const environment = {
   production: true,
   endpoints: {
-    login: 'http://localhost:5000/api/login',
-    register: 'http://localhost:5000/api/register',
-    user: 'http://localhost:5000/api/album-user/',
-    sendMessage: 'http://localhost:5000/api/send-mail'
+    login: 'https://mundial-2022-server-production.up.railway.app/api/login',
+    register: 'https://mundial-2022-server-production.up.railway.app/api/register',
+    user: 'https://mundial-2022-server-production.up.railway.app/api/album-user/',
+    sendMessage: 'https://mundial-2022-server-production.up.railway.app/api/send-mail'
     },
   // endpoints: {
   //   login: 'https://mundial-2022-server.onrender.com/api/login',
