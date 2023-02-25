@@ -7,6 +7,17 @@
 html, body { height: 100%; overflow-x: hidden; top: 0 !important;}
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+body::-webkit-scrollbar{
+    width: 10px;
+    background-color: #86113E;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: whitesmoke;
+    border-radius: 50px;
+}
+
+
 .cdk-global-scrollblock{
     overflow-y:hidden;
 }

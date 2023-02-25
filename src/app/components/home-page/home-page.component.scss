@@ -10,6 +10,7 @@
     width: 100%;
     height: 90vh;
     padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .text{
@@ -18,7 +19,6 @@
     background-size: 100% 100%;
     background-position: center center;
     background-repeat: no-repeat;
-    // background-attachment: fixed;
     
     color: whitesmoke;
 }
@@ -56,37 +56,56 @@
 
 .figuritas{
     background-color: #001220;
-    // padding-top: 10vh;
     height: 90vh;
+    padding-bottom: 7vh;
 }
-
-.grid-figuritas{
-    min-height: 45vh;
-    width: 75%;
-    margin: 0px auto;
-    margin-top: 15vh;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-}
-
 .figuritas p{
-    line-height: 10vh;
+    line-height: 8vh;
     font-size: 4.5em;
     color: whitesmoke;
     text-align: center;
-    padding-top: 8vh;
+    padding-top: 2vh;
     padding-left: 0.5em;
     padding-right: 0.5em;
 }
 
+
+.slider-frame{
+    width: 700px;
+    height: auto;
+    margin: 50px auto 0;
+    overflow: hidden;
+}
+
+
+.grid-figuritas{
+    display: flex;
+    padding: 0;
+    width: 400%;
+    animation: slide 16s infinite ease-in-out;
+}
+
 .figurita{
-    width: 85%;
-    height: 95%;
-    padding-left: 1.5em;
+    list-style: none;
+    width: 100%;
 }
 .figuritas img{
     width: 100%;
-    height: 100%;
+    height: 75vh;
+}
+
+@keyframes slide {
+    0%{margin-left: 0%;}
+    20%{margin-left: 0%;}
+
+    25%{margin-left: -100%;}
+    45%{margin-left: -100%;}
+
+    50%{margin-left: -200%;}
+    70%{margin-left: -200%;}
+
+    75%{margin-left: -300%;}
+    95%{margin-left: -300%;}
 }
 
 
@@ -95,8 +114,12 @@
         padding-top: 1vh;
     }
 
-    .grid-figuritas{
-        width: 90%;
+    .slider-frame{
+        width: 500px;
+    }
+    .figuritas img{
+        width: 100%;
+        height: 65vh;
     }
 
     .buttons button{
@@ -118,22 +141,10 @@
         width: 40%;
    }
 
-    .figuritas{
-        height: auto;
-        padding-bottom: 5vh;
-    }
+   .slider-frame{
+    width: 400px;
+}
 
-    .grid-figuritas{
-        width: 90%;
-        margin-top: 5vh;
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .figurita{
-        width: 85%;
-        height: 90%;
-        // padding-left: 1.2em;
-    }
 }
 
 @media (max-width: 569px){
@@ -150,8 +161,8 @@
         font-size: 3em;
     }
 
-    .figurita{
-        padding-left: 1.2em;
+    .slider-frame{
+        width: 350px;
     }
 }
 
@@ -170,12 +181,13 @@
    }
 
     .figuritas p{
-        font-size: 2.5em;
+        font-size: 2.3em;
     }
 
-    .figurita{
-        padding-left: 1em;
+    .slider-frame{
+        width: 300px;
     }
+
 }
 
 
@@ -193,4 +205,11 @@
         line-height: 14vh;
     }
     
+    .figuritas{
+        height: 105vh;
+    }
+
+    .slider-frame{
+        width: 400px;
+    }
 }

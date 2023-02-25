@@ -11,11 +11,13 @@
           <li class="select-pais" *ngFor="let pais of album.paises;let i=index;" (click)="actualizarPais(i)" (click)="select_paises_open = !select_paises_open" [class.completed]="pais.fig_completadas == pais.jugadores.length">{{pais.pais}}  |  {{pais.fig_completadas}}/{{pais.jugadores.length}}</li>
         </ul>  
       
-        <mat-spinner *ngIf="spinner" class="spinner" diameter="250"></mat-spinner>
+      <mat-spinner *ngIf="spinner" class="spinner" diameter="250"></mat-spinner>
       <div class="album" *ngIf="!spinner">
           <h1>{{album.paises[paisActual].pais}}</h1>
           <ul>
-              <li *ngFor="let jugador of album.paises[paisActual].jugadores"><app-figurita [jugador]="jugador"></app-figurita></li>
+              <li *ngFor="let jugador of album.paises[paisActual].jugadores">
+                <app-figurita [jugador]="jugador"></app-figurita>
+              </li>
           </ul>
       </div>
 
