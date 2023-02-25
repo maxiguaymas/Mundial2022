@@ -1,9 +1,9 @@
-<img loading="lazy" src="http://localhost:5000/api/images/{{jugador.jug_img}}" alt="{{jugador.nombre_jug}}" *ngIf="jugador.in_album && !modal">
+<img loading="lazy" src="https://mundial-2022-server-production.up.railway.app/api/images/{{jugador.jug_img}}" alt="{{jugador.nombre_jug}}" *ngIf="jugador.in_album && !modal">
 
 <div class="no-encontrada" *ngIf="!jugador.in_album && !modal">
     <p>{{jugador.nombre_jug}}</p>
 </div>
 
 
-<img src="http://localhost:5000/api/images/{{jugador.jug_img}}" alt="{{jugador.nombre_jug}}" *ngIf="modal">
+<img src="https://mundial-2022-server-production.up.railway.app/api/images/{{jugador.jug_img}}" alt="{{jugador.nombre_jug}}" *ngIf="modal">
 <span class="repetida" *ngIf="modal && jugador.in_album">Repetida</span>
